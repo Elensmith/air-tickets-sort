@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Air Tickets</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+</head>
+
+<body>
+  <div class="root">
+    <main>
+      <div class="sort"></div>
+      <!-- <template class="ticket-template"> -->
+      <div class="ticket">
+        <div class="ticket__header">
+          <img class="ticket__air-logo" src="" alt="логотип авиакомпании">
+          <div class="ticket__price-box">
+            <div class="ticket__price">21049</div>
+            <p>Стоимость для одного взрослого пассажира</p>
+          </div>
+        </div>
+        <div class="ticket__from-box">
+          <div class="ticket__first-row">
+            <p class="ticket__departure-city">Москва,</p>
+            <p class="ticket__departure-caption">ШЕРЕМЕТЬЕВО</p>
+            <span class="ticket__departure-airport-code">(SVO)</span>
+            <span class="ticket__arrow-right">&rarr;</span>
+            <p class="ticket__destination-city">ЛОНДОН,</p>
+            <p class="ticket__destination-caption">Лондон, Хитроу</p>
+            <span class="ticket__destination-airport-code">(LHR)</span>
+          </div>
+          <hr class="ticket__line ticket__line_lite">
+          <div class="ticket__second-row">
+            <div class="ticket__second-row-first-column">
+              <p class="ticket__departure-time">20:48</p>
+              <p class="ticket__departure-date">18 авг. вт</p>
+            </div>
+            <div class="ticket__second-row-second-column">
+              <span>&#128339;</span>
+              <p class="ticket__time-in-flight">14 ч 45 мин</p>
+            </div>
+            <div class="ticket__second-row-third-column">
+              <p class="ticket__arrival-date">19 авг. ср</p>
+              <p class="ticket__arrival-time">09:25</p>
+            </div>
+          </div>
+          <div class="ticket__transfer-box">
+            <hr class="ticket__line_medium">
+            <span class="ticket__transfer">1 пересадка</span>
+            <hr class="ticket__line_medium">
+          </div>
+          <div class="ticket__third-row">
+            <p class="ticket__info">Рейс выполняет:</p>
+            <p class="ticket__airline">LOT Polish Airlines</p>
+          </div>
+        </div>
+        <hr class="ticket__line ticket__line_blue">
+        <div class="ticket__return-box">
+          <div class="ticket__first-row">
+            <p class="ticket__departure-city">ЛОНДОН,</p>
+            <p class="ticket__departure-caption">Лондон, Хитроу</p>
+            <span class="ticket__departure-airport-code">(LHR)</span>
+            <span class="ticket__arrow-right">&rarr;</span>
+            <p class="ticket__destination-city">Москва,</p>
+            <p class="ticket__destination-caption">ШЕРЕМЕТЬЕВО</p>
+            <span class="ticket__destination-airport-code">(SVO)</span>
+          </div>
+          <hr class="ticket__line ticket__line_lite">
+          <div class="ticket__second-row">
+            <div class="ticket__second-row-first-column">
+              <p class="ticket__departure-time">18:10</p>
+              <p class="ticket__departure-date">19 авг. ср</p>
+            </div>
+            <div class="ticket__second-row-second-column">
+              <span>&#128339;</span>
+              <p class="ticket__time-in-flight">23 ч 35 мин</p>
+            </div>
+            <div class="ticket__second-row-third-column">
+              <p class="ticket__arrival-date">20 авг. чт</p>
+              <p class="ticket__arrival-time">19:45</p>
+            </div>
+          </div>
+          <div class="ticket__transfer-box">
+            <hr class="ticket__line_medium">
+            <span class="ticket__transfer">1 пересадка</span>
+            <hr class="ticket__line_medium">
+          </div>
+          <div class="ticket__third-row">
+            <p class="ticket__info">Рейс выполняет:</p>
+            <p class="ticket__airline">LOT Polish Airlines</p>
+          </div>
+        </div>
+        <button class="ticket__button">Выбрать</button>
+      </div>
+      <!-- </template> -->
+    </main>
+  </div>
+  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
+</body>
+
+</html>

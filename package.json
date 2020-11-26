@@ -1,0 +1,42 @@
+{
+  "name": "air-tickets-sort",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production rimraf dist && webpack --mode production",
+    "dev": "NODE_ENV=development webpack-dev-server --mode development --open --watch",
+    "deploy": "NODE_ENV=production gh-pages -d dist"
+  },
+  "author": "Elena Kuznetsova",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "7.12.1",
+    "@babel/core": "7.12.3",
+    "@babel/preset-env": "7.12.1",
+    "autoprefixer": "^10.0.2",
+    "babel-loader": "8.2.1",
+    "cross-env": "7.0.2",
+    "css-loader": "5.0.1",
+    "file-loader": "6.0.0",
+    "gh-pages": "~2.0.1",
+    "html-webpack-plugin": "4.5.0",
+    "image-webpack-loader": "6.0.0",
+    "mini-css-extract-plugin": "0.10.0",
+    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "postcss": "^8.1.7",
+    "postcss-loader": "^4.0.3",
+    "source-map-loader": "1.1.2",
+    "style-loader": "2.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0",
+    "webpack-md5-hash": "0.0.6",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "6.26.0",
+    "core-js": "3.4.1",
+    "npm-check": "5.9.2"
+  }
+}

@@ -1,0 +1,6 @@
+@import url(./__header/ticket__header.css);
+@import url(./__price-box/ticket__price-box.css);
+.ticket {
+   max-width: 40rem;
+   max-height: 23.063rem;
+}
