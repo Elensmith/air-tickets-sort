@@ -1,0 +1,9 @@
+@import url(./__show-more/search-result__show-more.css);
+
+.search-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 1.25rem;
+}

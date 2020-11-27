@@ -1,0 +1,7 @@
+.sort__price_input {
+  border: black 1px solid;
+}
+
+.sort__price_input:first-child {
+margin-bottom: 1rem;
+}

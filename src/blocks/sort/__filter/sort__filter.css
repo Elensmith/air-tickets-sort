@@ -1,0 +1,6 @@
+.sort__filter {
+  display: flex;
+  flex-direction: column;
+  padding:  0 0 1.188rem 1.188rem;
+  background-color: white;
+}

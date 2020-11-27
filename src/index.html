@@ -12,16 +12,46 @@
   <div class="root">
     <main class="main">
       <div class="sort">
-        <div class="sort__sort">
-          <div class="sort__title">Сортировать</div>
-          <input type="radio">- по возрастанию цены</input>
-        </div>
+        <form class="sort__sort">
+          <p class="sort__title">Сортировать</p>
+          <p><input type="radio" name="test" checked>&nbsp;- по возрастанию цены</input></p>
+          <p><input type="radio" name="test">&nbsp;- по убыванию цены</input></p>
+          <p><input type="radio" name="test">&nbsp;- по времени в пути</input></p>
+        </form>
+        <form class="sort__filter">
+          <p class="sort__title">Фильтровать</p>
+          <p><input type="checkbox" name="a">&nbsp;- 1 пересадка</input></p>
+          <p><input type="checkbox" name="a">&nbsp;- без пересадок</input></p>
+        </form>
+        <form class="sort__price">
+          <p class="sort__title">Цена</p>
+          <p>От&nbsp;<input class="sort__price_input" type="text" placeholder="0" name="a" pattern="[\d]"></input></p>
+          <p>До&nbsp;<input class="sort__price_input" type="text" placeholder="100000" name="a" pattern="[\d]"></input>
+          </p>
+        </form>
+        <form class="sort__avia">
+          <p class="sort__title">Авиакомпании</p>
+          <div class="sort__avia_inputs">
+            <p><input type="checkbox" name="a">
+            <p class="sort__avia_input-first">&nbsp;- LOT Polish Airlines</p></input>
+            <p>&nbsp;от&nbsp;</p>
+            <p class="sort__avia_price-first">21049 p.</p>
+            </p>
+          </div>
+          <div class="sort__avia_inputs">
+            <p><input type="checkbox" name="a">
+            <p class="sort__avia_input-second">&nbsp;- Аэрофлот российские авиалинии</p></input>
+            <p>&nbsp;от&nbsp;</p>
+            <p class="sort__avia_price-second">31733 p.</p>
+            </p>
+          </div>
+        </form>
       </div>
       <div class="search-result">
         <!-- <template class="ticket-template"> -->
         <div class="ticket">
           <div class="ticket__header">
-            <img class="ticket__air-logo" src="" alt="лого">
+            <img class="ticket__air-logo" src="<%=require('./images/plane2.png').default%>" alt="лого">
             <div class="ticket__price-box">
               <div class="ticket__price">21049 ₽</div>
               <p class="ticket__person">Стоимость для одного взрослого пассажира</p>

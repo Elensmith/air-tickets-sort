@@ -18,6 +18,7 @@
 @import url(./__date/ticket__date.css);
 @import url(./__departure-time/ticket__departure-time.css);
 @import url(./__arrival-time/ticket__arrival-time.css);
+@import url(./__air-logo/ticket__air-logo.css);
 
 .ticket {
    max-width: 40rem;

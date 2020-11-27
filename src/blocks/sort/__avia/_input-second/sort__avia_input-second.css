@@ -1,0 +1,7 @@
+.sort__avia_input-second {
+  width:9.063rem;
+  /* height:50px; */
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;  
+}

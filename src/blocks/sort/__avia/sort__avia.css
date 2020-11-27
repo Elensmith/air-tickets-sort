@@ -1,0 +1,10 @@
+@import url(./_input-first/sort__avia_input-first.css);
+@import url(./_input-second/sort__avia_input-second.css);
+@import url(./_inputs/sort__avia_inputs.css);
+
+.sort__avia {
+  display: flex;
+  flex-direction: column;
+  padding:  0 0 1.188rem 1.188rem;
+  background-color: white;
+}

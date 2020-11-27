@@ -1,0 +1,17 @@
+@import url(./__sort/sort__sort.css);
+@import url(./__avia/sort__avia.css);
+@import url(./__filter/sort__filter.css);
+@import url(./__price/sort__price.css);
+@import url(./__title/sort__title.css);
+
+.sort {
+  display: flex;
+  flex-direction: column;
+  max-width: 15.938rem;
+  font-size: 0.8em;
+  padding-left: 1.188rem;
+  background-color: #D9D9D9;
+  /* height: 39.938rem; */
+  padding: 2.25rem 0 8.938rem 0;
+  
+}
