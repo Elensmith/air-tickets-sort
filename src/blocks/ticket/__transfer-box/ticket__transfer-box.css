@@ -1,0 +1,5 @@
+.ticket__transfer-box {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}

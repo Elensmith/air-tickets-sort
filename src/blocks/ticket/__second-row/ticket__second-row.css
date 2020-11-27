@@ -1,0 +1,8 @@
+.ticket__second-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 3.125rem;
+  align-items: center;
+  padding-right: 2.188rem;
+}

@@ -1,0 +1,10 @@
+.ticket__transfer {
+  position: absolute;
+  margin: auto;
+  color: #F9D38C;
+  background-color: white;
+  width: 6.875rem;
+  left: 14.437rem;
+  text-align: center;
+  top: -0.563rem;
+}

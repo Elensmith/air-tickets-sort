@@ -1,2 +1,3 @@
 @import  url(./vendor/normalize.css);
 @import url(./blocks/ticket/ticket.css);
+@import url(./blocks/search-result/search-result__show-more.css);

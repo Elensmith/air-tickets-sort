@@ -1,0 +1,6 @@
+.ticket__from-box {
+  display: flex;
+  flex-direction: column;
+  height: 8.938rem;
+  padding-left: 1.125em;
+}

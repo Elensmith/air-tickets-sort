@@ -1,0 +1,8 @@
+.ticket__first-row {
+  display: flex;
+  flex-direction: row;
+  height: 2.563rem;
+  font-size: 1.1em;
+  letter-spacing: 0.063em;
+  align-items: center;
+}

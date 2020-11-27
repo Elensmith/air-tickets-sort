@@ -1,0 +1,7 @@
+.ticket__third-row {
+  display: flex;
+  flex-direction: row;
+  height: 3.125rem;
+  align-items: center;
+  /* padding-bottom: 0.75rem; */
+}

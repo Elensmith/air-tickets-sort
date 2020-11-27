@@ -1,0 +1,7 @@
+@import url(./_lite/ticket__line_lite.css);
+@import url(./_blue/ticket__line_blue.css);
+@import url(./_medium/ticket__line_medium.css);
+
+.ticket__line {
+  border-bottom: 1px lightgray solid;
+}

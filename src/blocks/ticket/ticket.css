@@ -1,5 +1,24 @@
 @import url(./__header/ticket__header.css);
 @import url(./__price-box/ticket__price-box.css);
+@import url(./__from-box/ticket__from-box.css);
+@import url(./__first-row/ticket__first-row.css);
+@import Url(./__second-row/ticket__second-row.css);
+@import url(./__transfer-box/ticket__transfer-box.css);
+@import url(./__third-row/ticket__third-row.css);
+@import url(./__button/ticket__button.css);
+@import url(./__line/ticket__line.css);
+@import url(./__transfer/ticket__transfer.css);
+@import url(./__person/ticket__person.css);
+@import url(./__price/ticket__price.css);
+@import url(./__return-box/ticket__return-box.css);
+@import url(./__departure-airport-code/ticket__departure-airport-code.css);
+@import url(./__destination-airport-code/ticket__destination-airport-code.css);
+@import url(./__arrow-right/ticket__arrow-right.css);
+@import url(./__column/ticket__column.css);
+@import url(./__date/ticket__date.css);
+@import url(./__departure-time/ticket__departure-time.css);
+@import url(./__arrival-time/ticket__arrival-time.css);
+
 .ticket {
    max-width: 40rem;
    max-height: 23.063rem;
