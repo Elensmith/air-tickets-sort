@@ -23,4 +23,9 @@
 .ticket {
    max-width: 40rem;
    max-height: 23.063rem;
+   margin-bottom: 1.75rem;
+}
+
+.ticket:last-of-type {
+   margin-bottom: 0;
 }
