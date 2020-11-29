@@ -17,12 +17,12 @@ export default class CardList {
     const flights = array.filter(flight => flight.flight.carrier.caption === aeroflot || flight.flight.carrier.caption === pilishAirlines);
 
     // const moscowLondon = flights.filter(flight => flight.flight.legs[0].segments[0].departureCity.caption === moscow && flight.flight.legs[1].segments[0].departureCity.caption === london);
-    const filterBySmallPrice = [...flights].sort((a, b) => {
-      const elA = a.querySelector(element).textContent;
-      const elB = b.querySelector(element).textContent;
-      const getPrice = (el) => parseInt(el.replace(/ /g, ""));
-      return getPrice(elA) - getPrice(elB);
-    })
+    // const filterBySmallPrice = [...flights].sort((a, b) => {
+    //   const elA = a.querySelector(element).textContent;
+    //   const elB = b.querySelector(element).textContent;
+    //   const getPrice = (el) => parseInt(el.replace(/ /g, ""));
+    //   return getPrice(elA) - getPrice(elB);
+    // })
     // console.log(flights);
     // console.log(moscowLondon);
     flights.forEach((element) => {
