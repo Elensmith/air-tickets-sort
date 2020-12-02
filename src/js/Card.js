@@ -14,8 +14,6 @@ export default class Card {
     const arrivalTicket = this.template.querySelector(".ticket__return-box");
     const totalPrice = this.template.querySelector(".ticket__price");
 
-    // console.log(departureTicket);
-    // console.log(arrivalTicket);
     // билет туда
     const departureCity = departureTicket.querySelector(".ticket__departure-city");
     const departureCaption = departureTicket.querySelector(".ticket__departure-caption");
@@ -83,8 +81,8 @@ export default class Card {
 
   createCard() {
     this.page
-      .querySelector(".search-result")
-      .prepend(
+      .querySelector(".search-result__tickets")
+      .append(
         this.page.querySelector(".ticket-template").content.cloneNode(true),
       );
   }
