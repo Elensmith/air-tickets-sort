@@ -10,36 +10,45 @@ export default class CardList {
     this._cleanHandler = this._cleanHandler.bind(this);
     this.buttonShowMore = this.page.querySelector(".search-result__show-more");
     this.ticketsArray = this.array;
-    this.splicedArray = this.ticketsArray;
+    this.splicedArray = [];
     this.inputFrom = [];
     this.inputTo = [];
-    this.ticketsChunks = [];
+    // this.ticketsChunks = [];
+    // console.log(this.ticketsChunks);
     this.aeroflot = "Аэрофлот - российские авиалинии";
     this.pilishAirlines = "LOT Polish Airlines"
   }
 
   // отрисовка по 2 карточки
   showCards() {
-    const twoTickets = 2;
+    // const twoTickets = 2;
+    this.splicedArray = this.ticketsArray;
     // let ticketsChunks = [];
 
-    if (this.array !== this.ticketsArray) {
-      this.ticketsArray = this.array;
-      this.splicedArray = this.ticketsArray;
-      this.ticketsChunks = [];
-    }
-    if (this.splicedArray.length > twoTickets) {
-      this.ticketsChunks = this.splicedArray.splice(0, twoTickets);
-      this.ticketsChunks.forEach((element) => {
-        this.addCard(element);
-      });
-      this._showMore();
-    } else {
-      this.ticketsChunks = this.splicedArray;
-      this.splicedArray.forEach((element) => {
-        this.addCard(element);
-      });
-    }
+    // if (this.array !== this.ticketsArray) {
+    //   this.ticketsArray = this.array;
+    //   this.splicedArray = [];
+    //   // ticketsChunks = [];
+    //   this.splicedArray = this.ticketsArray;
+
+    // }
+    // if (this.splicedArray.length > twoTickets) {
+    // ticketsChunks = this.splicedArray.filter((el, index, arr) => {
+
+    // })
+    // ticketsChunks = this.splicedArray.splice(0, twoTickets);
+    // ticketsChunks.forEach((element) => {
+    //   this.addCard(element);
+    // });
+
+    // this._showMore();
+    // } else {
+    // ticketsChunks = this.splicedArray;
+    this.array.forEach((element) => {
+      this.addCard(element);
+    });
+
+    // }
 
   }
 
@@ -52,7 +61,6 @@ export default class CardList {
       event.stopPropagation();
       this.showCards();
     });
-    // console.log(this.ticketsChunks);
   }
 
   // подстановка значений в карточку + создание карточки
