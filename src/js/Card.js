@@ -9,6 +9,7 @@ export default class Card {
     this.timeConverter = this.timeConverter.bind(this);
   }
 
+  // подстановка данных в карточку
   setData() {
     const departureTicket = this.template.querySelector(".ticket__from-box");
     const arrivalTicket = this.template.querySelector(".ticket__return-box");
@@ -28,7 +29,7 @@ export default class Card {
     const arrivalDate = departureTicket.querySelector(".ticket__arrival-date");
     const transfer = departureTicket.querySelector(".ticket__transfer");
     const airline = departureTicket.querySelector(".ticket__airline");
-    // console.log(this.data);
+
     // билет обратно
     const departureCityReturn = arrivalTicket.querySelector(".ticket__departure-city");
     const departureCaptionReturn = arrivalTicket.querySelector(".ticket__departure-caption");
@@ -61,7 +62,6 @@ export default class Card {
     arrivalDate.textContent = noTransfer ? this.changeDate(this.data.flight.legs[0].segments[0].arrivalDate) : this.changeDate(this.data.flight.legs[0].segments[1].arrivalDate);
     transfer.textContent = this.data.flight.legs[0].segments.length > 1 ? "1 пересадка" : "";
     airline.textContent = this.data.flight.carrier.caption;
-    // console.log(typeof this.data.flight.legs[0].segments[0].departureDate);
 
     // подстановка значений обратно
     departureCityReturn.textContent = this.data.flight.legs[1].segments[0].departureCity.caption;
@@ -79,6 +79,7 @@ export default class Card {
     airlineReturn.textContent = this.data.flight.carrier.caption;
   }
 
+  // отриковка карточки
   createCard() {
     this.page
       .querySelector(".search-result__tickets")
@@ -87,6 +88,7 @@ export default class Card {
       );
   }
 
+  // формат даты "18 авг. вт"
   changeDate(string) {
     const date = new Date(string);
     const day = new Intl.DateTimeFormat("ru", { day: "numeric" }).format(date);
@@ -95,6 +97,7 @@ export default class Card {
     return `${day} ${month} ${weekday}`;
   };
 
+  //  формат времени отправления/прибытия "08:30"
   changeHour(string) {
     const date = new Date(string);
     const hour = new Intl.DateTimeFormat("ru", { hour: "2-digit" }).format(date);
@@ -102,6 +105,7 @@ export default class Card {
     return `${hour}:${minute === "0" ? "00" : minute}`;
   }
 
+  //  формат времени в пути "9 ч 30 мин"
   timeConverter(string) {
     const hours = Math.floor(string / 60);
     const minutes = string % 60;

@@ -1,5 +1,4 @@
 import "../style.css";
-// const cardsJSON = require("./flights.json");
 import Card from "./Card";
 import CardList from "./CardList";
 const flightsJSON = require("./flights");
@@ -7,29 +6,36 @@ const flightsJSON = require("./flights");
 (() => {
   const flightsArr = flightsJSON.result.flights;
   const page = document;
-  const chipFirst = page.querySelector(".sort__avia_input-first");
-  const chipSecond = page.querySelector(".sort__avia_input-second");
+  const chipCompanyFirst = page.querySelector(".sort__avia_input-first");
+  const chipCompanySecond = page.querySelector(".sort__avia_input-second");
+  const chipPriceFirst = page.querySelector(".sort__avia_price-first");
+  const chipPriceSecond = page.querySelector(".sort__avia_price-second");
 
   const aeroflot = "Аэрофлот - российские авиалинии";
   const pilishAirlines = "LOT Polish Airlines"
-  // const moscow = "Москва";
-  // const london = "ЛОНДОН";
+
+  // сортировка по двум компаниям. для дальнейшего использования
   const flights = flightsArr.filter(flight => flight.flight.carrier.caption === aeroflot || flight.flight.carrier.caption === pilishAirlines);
 
-
-  const flightsSortBySmallPrice = [...flights].sort((a, b) => {
+  // сортировка по компании 1 (низкая цена) для отрисовки в доме
+  const flightsChipCompanyFirst = flightsArr.filter(flight => flight.flight.carrier.caption === aeroflot).sort((a, b) => {
+    const elA = a.flight.price.total.amount;
+    const elB = b.flight.price.total.amount;
+    return elA - elB;
+  });
+  // сортировка по компании 2 (низкая цена) для отрисовки в доме
+  const flightsChipCompanySecond = flightsArr.filter(flight => flight.flight.carrier.caption === pilishAirlines).sort((a, b) => {
     const elA = a.flight.price.total.amount;
     const elB = b.flight.price.total.amount;
     return elA - elB;
   });
 
+  chipCompanyFirst.textContent = flightsChipCompanyFirst[0].flight.carrier.caption;
+  chipCompanySecond.textContent = flightsChipCompanySecond[0].flight.carrier.caption
+  chipPriceFirst.textContent = `${flightsChipCompanyFirst[0].flight.price.total.amount + " " + "р."}`;
+  chipPriceSecond.textContent = `${flightsChipCompanySecond[0].flight.price.total.amount + " " + "р."}`;
 
-
-  chipFirst.textContent = flightsSortBySmallPrice[0].flight.carrier.caption;
-  chipSecond.textContent = flightsSortBySmallPrice[1].flight.carrier.caption
-
-
-  // отрисовка карточек
+  // инстанс для отрисовки карточек
   const cardList = new CardList(
     page,
     (element, card) => new Card(element, card, page),
@@ -72,4 +78,13 @@ const flightsJSON = require("./flights");
     cardList.sortByPriceTo(e);
   });
 
+  // только билеты авиакомпании flightsChipCompanyFirst 
+  page.querySelector('input[name="chip-avia-first"]').addEventListener("input", () => {
+    cardList.sortByChipCompanyFirst();
+  });
+
+  // только билеты авиакомпании flightsChipCompanySecond 
+  page.querySelector('input[name="chip-avia-second"]').addEventListener("input", () => {
+    cardList.sortByChipCompanySecond();
+  });
 })();
