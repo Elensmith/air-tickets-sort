@@ -70,12 +70,16 @@ const flightsJSON = require("./flights");
 
   // сортировка цена от
   page.querySelector('input[name="price-from"]').addEventListener("input", (e) => {
-    cardList.sortByPriceFrom(e);
+    setTimeout(() => {
+      cardList.sortByPriceFrom(e);
+    }, 2500)
   });
 
   // сортировка цена до
   page.querySelector('input[name="price-to"]').addEventListener("input", (e) => {
-    cardList.sortByPriceTo(e);
+    setTimeout(() => {
+      cardList.sortByPriceTo(e);
+    }, 2500)
   });
 
   // только билеты авиакомпании flightsChipCompanyFirst 

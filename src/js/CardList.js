@@ -13,42 +13,40 @@ export default class CardList {
     this.splicedArray = [];
     this.inputFrom = [];
     this.inputTo = [];
-    // this.ticketsChunks = [];
-    // console.log(this.ticketsChunks);
     this.aeroflot = "Аэрофлот - российские авиалинии";
     this.pilishAirlines = "LOT Polish Airlines"
   }
 
   // отрисовка по 2 карточки
   showCards() {
-    // const twoTickets = 2;
+    const twoTickets = 2;
     this.splicedArray = this.ticketsArray;
-    // let ticketsChunks = [];
+    let ticketsChunks = [];
 
-    // if (this.array !== this.ticketsArray) {
-    //   this.ticketsArray = this.array;
-    //   this.splicedArray = [];
-    //   // ticketsChunks = [];
-    //   this.splicedArray = this.ticketsArray;
+    if (this.array !== this.ticketsArray) {
+      this.ticketsArray = this.array;
+      this.splicedArray = [];
+      // ticketsChunks = [];
+      this.splicedArray = this.ticketsArray;
 
-    // }
-    // if (this.splicedArray.length > twoTickets) {
-    // ticketsChunks = this.splicedArray.filter((el, index, arr) => {
+    }
+    if (this.splicedArray.length > twoTickets) {
+      ticketsChunks = this.splicedArray.filter((el, index, arr) => {
 
-    // })
-    // ticketsChunks = this.splicedArray.splice(0, twoTickets);
-    // ticketsChunks.forEach((element) => {
-    //   this.addCard(element);
-    // });
+      })
+      ticketsChunks = this.splicedArray.splice(0, twoTickets);
+      ticketsChunks.forEach((element) => {
+        this.addCard(element);
+      });
 
-    // this._showMore();
-    // } else {
-    // ticketsChunks = this.splicedArray;
-    this.array.forEach((element) => {
-      this.addCard(element);
-    });
+      this._showMore();
+    } else {
+      ticketsChunks = this.splicedArray;
+      this.array.forEach((element) => {
+        this.addCard(element);
+      });
 
-    // }
+    }
 
   }
 
@@ -122,11 +120,19 @@ export default class CardList {
       // min.substring(0, min.length - 1);
     }
     const min = parseFloat(this.inputFrom.toString().replace(/,/g, ''));
-
+    // console.log(this.inputTo.length);
+    if (this.inputTo.length === 0) {
+      const fromPrice = this.arrayMain.filter(flight =>
+        flight.flight.price.total.amount >= min);
+      this.array = fromPrice;
+      this.showCards();
+    }
+    const max = parseFloat(this.inputTo.toString().replace(/,/g, ''));
     const fromPrice = this.arrayMain.filter(flight =>
-      flight.flight.price.total.amount >= min);
+      flight.flight.price.total.amount >= min && flight.flight.price.total.amount <= max);
     this.array = fromPrice;
     this.showCards();
+
   }
 
   // сортировка цена до
@@ -138,11 +144,17 @@ export default class CardList {
       // min.substring(0, min.length - 1);
     }
     const max = parseFloat(this.inputTo.toString().replace(/,/g, ''));
+    const min = parseFloat(this.inputFrom.toString().replace(/,/g, ''));
 
-    console.log(max);
-    console.log(this.inputTo);
+    if (this.inputFrom.length === 0) {
+      const toPrice = this.arrayMain.filter(flight =>
+        flight.flight.price.total.amount <= max);
+      this.array = toPrice;
+      this.showCards();
+    }
+
     const toPrice = this.arrayMain.filter(flight =>
-      flight.flight.price.total.amount <= max);
+      flight.flight.price.total.amount >= min && flight.flight.price.total.amount <= max);
     this.array = toPrice;
     this.showCards();
   }
@@ -170,7 +182,10 @@ export default class CardList {
       this.array = this.arrayMain;
       this.showCards();
     }
-
+    if (!this.page.querySelector('input[name="chip-avia-first"]').checked) {
+      this.array = this.arrayMain;
+      this.showCards();
+    }
     const flightsChipCompanyFirst = this.array.filter(flight => flight.flight.carrier.caption === this.aeroflot);
     this.array = flightsChipCompanyFirst;
     this.showCards();
@@ -180,6 +195,11 @@ export default class CardList {
   sortByChipCompanySecond() {
     this._cleanHandler();
     if (this.page.querySelector('input[name="chip-avia-first"]').checked) {
+      this.array = this.arrayMain;
+      this.showCards();
+    }
+
+    if (!this.page.querySelector('input[name="chip-avia-second"]').checked) {
       this.array = this.arrayMain;
       this.showCards();
     }
